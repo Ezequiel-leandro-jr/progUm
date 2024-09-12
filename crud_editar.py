@@ -28,8 +28,8 @@ def editar(portfolio, prontuario):
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
-                            veiculo.placa = input('PLACA: ').strip()
-                            portfolio[indice] = veiculo
+                            paciente.prontuario = input('PRONTUÁRIO: ').strip()
+                            portfolio[indice] = paciente
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
