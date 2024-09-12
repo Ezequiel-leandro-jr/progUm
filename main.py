@@ -1,11 +1,11 @@
-from classe_veiculo import Veiculo
-from persistencia import cria_banco, salva_banco
+from classe_paciente import Paciente
+from persistencia_dados import cria_banco, salva_banco
 from crud_registrar import cadastrar
 from crud_editar import editar
 from crud_buscar import buscar
 from crud_listar import listar
 from crud_deletar import deletar
-from cabecalhos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar, titulo_listar
+from titulos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar, titulo_listar
 import time
 import os
 
@@ -16,11 +16,11 @@ while True:
     op = input('''
          MENU
 ---------------------
-1. REGISTRAR VEICULO
-2. BUSCAR VEICULO
-3. EDITAR VEICULO
-4. LISTAR PORTFOLIO
-5. DELETAR VEICULO
+1. REGISTRAR PACIENTE
+2. BUSCAR PACIENTE
+3. EDITAR PACIENTE
+4. LISTAR PACIENTES
+5. DELETAR PACIENTE
 
 0. SAIR DO SISTEMA
 ---------------------
@@ -34,15 +34,15 @@ OP: ''')
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_buscar()
-            placa = input('PLACA: ').strip()
-            buscar(portfolio, placa)
+            prontuario = input('PRONTUÁRIO: ').strip()
+            buscar(portfolio, prontuario)
             salva_banco(portfolio)
         case '3':
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_editar()
-            placa = input('PLACA: ').strip()
-            editar(portfolio, placa)
+            prontuario = input('PRONTUÁRIO: ').strip()
+            editar(portfolio, prontuario)
             salva_banco(portfolio)
         case '4':
             listar(portfolio)
@@ -51,8 +51,8 @@ OP: ''')
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_deletar()
-            placa = input('PLACA: ').strip()
-            deletar(portfolio, placa)
+            prontuario = input('PRONTUÁRIO: ').strip()
+            deletar(portfolio, prontuario)
             salva_banco(portfolio)
         case '0':
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -64,6 +64,6 @@ OP: ''')
         case _:
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
-            print('\nERRO: OPCAO INVALIDA!')
+            print('\nERRO: OPÇÃO INVÁLIDA!')
             salva_banco(portfolio)
             time.sleep(1)

@@ -1,29 +1,29 @@
 from funcao_busca import funcao_busca
 from classe_veiculo import Veiculo
 from funcao_exibir import funcao_exibir
-from cabecalhos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar
+from titulos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar
 import time
 import os
 
-def editar(portfolio, placa):
+def editar(portfolio, prontuario):
     while True:
-        veiculo = funcao_busca(portfolio, placa)
+        paciente = funcao_busca(portfolio, prontuario)
 
-        if veiculo:
-            indice = portfolio.index(veiculo)
+        if paciente:
+            indice = portfolio.index(paciente)
             while True:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 titulo_automarket()
                 titulo_editar()
-                funcao_exibir(veiculo)
-                op = input('CONTINUAR EDIÇÃO [1]\nEDITAR OUTRO VEÍCULO [2]\nVOLTAR AO MENU [3]\n>>> ') 
+                funcao_exibir(paciente)
+                op = input('CONTINUAR EDIÇÃO [1]\nEDITAR OUTRO PACIENTE [2]\nVOLTAR AO MENU [3]\n>>> ') 
                 if op == '1':
                     while True:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         titulo_automarket()
                         titulo_editar()
-                        funcao_exibir(veiculo)
-                        alterar = input('SELECIONE O CAMPO:\n1. Placa\n2. Tipo\n3. Marca\n4. Modelo\n5. Cor\n6. Ano de fabricação\n7. Portas\n8. Combustível\n9. Conservação\n10. Quilometragem\n11. Preço\n12. Status\n\n0. Voltar\n>> ')
+                        funcao_exibir(paciente)
+                        alterar = input('SELECIONE O CAMPO:\n1. Prontuário\n2. Nome completo\n3. CPF\n4. Idade\n5. Data da consulta\n6. Hora da consulta\n7. Especialidade\n8. Médico(a)\n9. Tipo de consulta\n10. Acompanhante\n11. Contato\n12. Plano\n\n0. Voltar\n>> ')
                         if alterar == '1':
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()

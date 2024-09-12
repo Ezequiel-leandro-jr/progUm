@@ -1,12 +1,14 @@
 # placa, tipo, marca, modelo, cor, ano_fabricacao, portas, combustivel, conservacao, quilometragem, preco, status
-def funcao_exibir(veiculo):
+def funcao_exibir(paciente):
     print(f'''
-VEÍCULO:
+PACIENTE:
 ----------------------------------------------------------------------------------------------------------------------
-PLACA: {veiculo.placa} | TIPO: {veiculo.tipo} | MARCA: {veiculo.marca} | MODELO: {veiculo.modelo}
-ANO: {veiculo.ano_fabricacao} | COR: {veiculo.cor} | PORTAS: {veiculo.portas} | COMBUSTÍVEL: {veiculo.combustivel}
-ESTADO: {veiculo.conservacao} | QUILOMETRAGEM: {veiculo.quilometragem:.2f}Km | PREÇO: R${veiculo.preco:.2f}
-STATUS: {veiculo.status}
+PRONTUÁRIO: {paciente.prontuario}
+NOME COMPLETO: {paciente.nome}
+CPF: {paciente.cpf_paciente} | IDADE: {paciente.idade_paciente} anos | CONTATO: {paciente.contato_paciente}
+DATA DA CONSULTA: {paciente.data_consulta} | HORÁRIO: {paciente.hora_consulta} | ESPECIALIDADE: {paciente.especialidade}
+MÉDICO(A): Dr.{paciente.medico} | TIPO: {paciente.tipo_consulta} | ACOMPANHANTE: {paciente.acompanhante}
+PLANO: {paciente.plano}
 ______________________________________________________________________________________________________________________
 
 ''')
