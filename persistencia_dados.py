@@ -33,6 +33,6 @@ def salva_banco(portfolio):
 
     with open(file, 'w') as f:
         for paciente in portfolio:
-            f.write(f"{veiculo.placa};{veiculo.tipo};{veiculo.marca};{veiculo.modelo};{veiculo.cor};"
-                    f"{veiculo.ano_fabricacao};{veiculo.portas};{veiculo.combustivel};{veiculo.conservacao};"
-                    f"{veiculo.quilometragem};{veiculo.preco};{veiculo.status}\n")
+            f.write(f"{paciente.prontuario};{paciente.nome_paciente};{paciente.cpf_paciente};{paciente.idade_paciente};{paciente.data_consulta};"
+                    f"{vpaciente.hora_consulta};{paciente.especialidade};{paciente.medico};{paciente.tipo_consulta};"
+                    f"{paciente.acompanhante};{paciente.contato_paciente};{paciente.plano}\n")

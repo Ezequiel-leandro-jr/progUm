@@ -1,5 +1,5 @@
 from funcao_busca import funcao_busca
-from classe_veiculo import Veiculo
+from classe_paciente import Paciente
 from funcao_exibir import funcao_exibir
 from titulos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar
 import time
