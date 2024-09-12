@@ -35,35 +35,35 @@ def editar(portfolio, prontuario):
                             titulo_editar()
                             print('\nEDIÇÃO REALIZADA COM SUCESSO!')
                             time.sleep(2)
-                        elif alterar == '2':
+                        elif alterar == '7':
                             while True:
                                 os.system('cls' if os.name == 'nt' else 'clear')
                                 titulo_automarket()
                                 titulo_editar()
-                                tipo = input('''
-TIPO:
-1. Camioneta
-2. Caminhonete
-3. Caminhão
-4. Carro
-5. Carreta
-6. Motocicleta
-7. Outro
+                                especialidade = input('''
+ESPECIALIDADE:
+1. Clínica Geral
+2. Pediatria
+3. Geriatria
+4. Cardiologia
+5. Gastroenterologia
+6. Endocrinologia
+7. Reumatologia
 
-0. Voltar
+0. Cancelar
 ----------------
 OP: ''')
-                                if tipo in ['1', '2', '3', '4', '5', '6', '7']:
-                                    tipos = ['Camioneta', 'Caminhonete', 'Caminhão', 'Carro', 'Carreta', 'Motocicleta', 'Outro']
-                                    veiculo.tipo = tipos[int(tipo) - 1]
-                                    portfolio[indice] = veiculo
+                                if especialidade in ['1', '2', '3', '4', '5', '6', '7']:
+                                    especialidades = ['Clínica Geral', 'Pediatria', 'Geriatria', 'Cardiologia', 'Gastroenterologia', 'Endocrinologia', 'Reumatologia']
+                                    paciente.especialidade = especialidades[int(especialidade) - 1]
+                                    portfolio[indice] = paciente
                                     os.system('cls' if os.name == 'nt' else 'clear')
                                     titulo_automarket()
                                     titulo_editar()
                                     print('\nEDIÇÃO REALIZADA COM SUCESSO!')
                                     time.sleep(2)
                                     break
-                                elif tipo == '0':
+                                elif especialidade == '0':
                                     os.system('cls' if os.name == 'nt' else 'clear')
                                     titulo_automarket()
                                     titulo_editar()
@@ -76,12 +76,23 @@ OP: ''')
                                     titulo_editar()
                                     print('\nERRO: Opção incorreta! Tente novamente!')
                                     time.sleep(1)
+                        elif alterar == '2':
+                            os.system('cls' if os.name == 'nt' else 'clear')
+                            titulo_automarket()
+                            titulo_editar()
+                            paciente.nome_paciente = input('NOME COMPLETO: ').split()
+                            portfolio[indice] = paciente
+                            os.system('cls' if os.name == 'nt' else 'clear')
+                            titulo_automarket()
+                            titulo_editar()
+                            print('\nEDIÇÃO REALIZADA COM SUCESSO!')
+                            time.sleep(2)
                         elif alterar == '3':
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
-                            veiculo.marca = input('MARCA: ')
-                            portfolio[indice] = veiculo
+                            paciente.cpf_paciente = input('CPF: ').split()
+                            portfolio[indice] = paciente
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
@@ -91,8 +102,8 @@ OP: ''')
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
-                            veiculo.modelo = input('MODELO: ')
-                            portfolio[indice] = veiculo
+                            paciente.idade_paciente = int(input('IDADE: '))
+                            portfolio[indice] = paciente
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
@@ -102,8 +113,8 @@ OP: ''')
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
-                            veiculo.cor = input('COR: ')
-                            portfolio[indice] = veiculo
+                            paciente.data_consulta = input('DATA DA CONSULTA (ex: 23/01/2024): ').split()
+                            portfolio[indice] = paciente
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
@@ -113,81 +124,42 @@ OP: ''')
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
-                            veiculo.ano_fabricacao = input('ANO: ')
-                            portfolio[indice] = veiculo
+                            paciente.hora_consulta = input('HORÁRIO (ex: 14:00): ')
+                            portfolio[indice] = paciente
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
                             print('\nEDIÇÃO REALIZADA COM SUCESSO!')
                             time.sleep(2)
-                        elif alterar == '7':
-                            os.system('cls' if os.name == 'nt' else 'clear')
-                            titulo_automarket()
-                            titulo_editar()
-                            veiculo.portas = int(input('PORTAS: '))
-                            portfolio[indice] = veiculo
-                            os.system('cls' if os.name == 'nt' else 'clear')
-                            titulo_automarket()
-                            titulo_editar()
-                            print('\nEDIÇÃO REALIZADA COM SUCESSO!')
-                            time.sleep(2)
-                        elif alterar == '8':
-                            while True:
-                                os.system('cls' if os.name == 'nt' else 'clear')
-                                titulo_automarket()
-                                titulo_editar()
-                                combustivel = input('''
-COMBUSTÍVEL:
-1. Gasolina
-2. GLP
-3. Etanol
-4. GNV
-5. Elétrico
-6. Híbrido
-7. Outro
-
-0. Voltar
-----------------
-OP: ''')
-                                if combustivel in ['1', '2', '3', '4', '5', '6', '7']:
-                                    combustiveis = ['Gasolina', 'GLP', 'Etanol', 'GNV', 'Elétrico', 'Híbrido', 'Outro']
-                                    veiculo.combustivel = combustiveis[int(combustivel) - 1]
-                                    portfolio[indice] = veiculo
-                                    os.system('cls' if os.name == 'nt' else 'clear')
-                                    titulo_automarket()
-                                    titulo_editar()
-                                    print('\nEDIÇÃO REALIZADA COM SUCESSO!')
-                                    time.sleep(2)
-                                    break
-                                elif combustivel == '0':
-                                    os.system('cls' if os.name == 'nt' else 'clear')
-                                    titulo_automarket()
-                                    titulo_editar()
-                                    print('EDIÇÃO CANCELADA!')
-                                    time.sleep(2)
-                                    break
-                                else:
-                                    os.system('cls' if os.name == 'nt' else 'clear')
-                                    titulo_automarket()
-                                    titulo_editar()
-                                    print('ERRO: Opção incorreta! Tente novamente!')
-                                    time.sleep(1)
                         elif alterar == '9':
                             while True:
                                 os.system('cls' if os.name == 'nt' else 'clear')
                                 titulo_automarket()
                                 titulo_editar()
-                                conservacao = input('ESTADO DE CONSERVAÇÃO:\n1. Novo\n2. Seminovo\n\n\n0. Voltar\n----------------\nOP: ')
-                                if conservacao in ['1', '2']:
-                                    veiculo.conservacao = 'Novo' if conservacao == '1' else 'Seminovo'
-                                    portfolio[indice] = veiculo
+                                tipo_consulta = input('''
+TIPO DA CONSULTA:
+1. Primeira Vez
+2. Retorno
+3. Encaixe
+4. Urgência
+5. Acompanhamento
+6. Prioritária
+7. Reagendamento
+
+0. Cancelar
+----------------
+OP:  ''')
+                                if tipo_consulta in ['1', '2', '3', '4', '5', '6', '7']:
+                                    consultas = ['Primeira Vez', 'Retorno', 'Encaixe', 'Urgência', 'Acompanhamento', 'Prioritária', 'Reagendamento']
+                                    paciente.tipo_consulta = consultas[int(tipo_consulta) - 1]
+                                    portfolio[indice] = paciente
                                     os.system('cls' if os.name == 'nt' else 'clear')
                                     titulo_automarket()
                                     titulo_editar()
                                     print('\nEDIÇÃO REALIZADA COM SUCESSO!')
                                     time.sleep(2)
                                     break
-                                elif conservacao == '0':
+                                elif tipo_consulta == '0':
                                     os.system('cls' if os.name == 'nt' else 'clear')
                                     titulo_automarket()
                                     titulo_editar()
@@ -201,11 +173,39 @@ OP: ''')
                                     print('ERRO: Opção incorreta! Tente novamente!')
                                     time.sleep(1)
                         elif alterar == '10':
+                            while True:
+                                os.system('cls' if os.name == 'nt' else 'clear')
+                                titulo_automarket()
+                                titulo_editar()
+                                acompanhante = input('ACOMPANHANTE:\n1. Sim\n2. Não\n\n\n0. Cancelar\n----------------\nOP: ')
+                                if acompanhante in ['1', '2']:
+                                    paciente.acompanhante = 'Sim' if conservacao == '1' else 'Não'
+                                    portfolio[indice] = paciente
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    titulo_automarket()
+                                    titulo_editar()
+                                    print('\nEDIÇÃO REALIZADA COM SUCESSO!')
+                                    time.sleep(2)
+                                    break
+                                elif acompanhante == '0':
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    titulo_automarket()
+                                    titulo_editar()
+                                    print('EDIÇÃO CANCELADA!')
+                                    time.sleep(2)
+                                    break
+                                else:
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    titulo_automarket()
+                                    titulo_editar()
+                                    print('ERRO: Opção incorreta! Tente novamente!')
+                                    time.sleep(1)
+                        elif alterar == '8':
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
-                            veiculo.quilometragem = float(input('QUILOMETRAGEM (KM): '))
-                            portfolio[indice] = veiculo
+                            paciente.medico = input('MÉDICO(A): ')
+                            portfolio[indice] = paciente
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
@@ -215,8 +215,8 @@ OP: ''')
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
-                            veiculo.preco = float(input('PREÇO (R$): '))
-                            portfolio[indice] = veiculo
+                            paciente.contato_paciente = input('CONTATO: ')
+                            portfolio[indice] = paciente
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_editar()
@@ -227,18 +227,18 @@ OP: ''')
                                 os.system('cls' if os.name == 'nt' else 'clear')
                                 titulo_automarket()
                                 titulo_editar()
-                                status = input('STATUS:\n1. À venda\n2. Reservado\n3. Vendido\n4. Indisponível\n\n0. Voltar\n----------------\nOP: ')
-                                if status in ['1', '2', '3', '4']:
-                                    status_opcoes = ['À venda', 'Reservado', 'Vendido', 'Indisponível']
-                                    veiculo.status = status_opcoes[int(status) - 1]
-                                    portfolio[indice] = veiculo
+                                plano = input('PLANO:\n1. Sassepe\n2. Unimed\n3. Avulso\n4. Outro\n\n0. Cancelar\n----------------\nOP: ')
+                                if plano in ['1', '2', '3', '4']:
+                                    planos = ['Sassepe', 'Unimed', 'Avulso', 'Outro']
+                                    paciente.plano = status_opcoes[int(status) - 1]
+                                    portfolio[indice] = paciente
                                     os.system('cls' if os.name == 'nt' else 'clear')
                                     titulo_automarket()
                                     titulo_editar()
                                     print('\nEDIÇÃO REALIZADA COM SUCESSO!')
                                     time.sleep(2)
                                     break
-                                elif status == '0':
+                                elif plano == '0':
                                     os.system('cls' if os.name == 'nt' else 'clear')
                                     titulo_automarket()
                                     titulo_editar()
@@ -265,7 +265,7 @@ OP: ''')
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_editar()
-                    placa = input('PLACA: ')
+                    prontuário = input('PRONTUÁRIO: ').split()
                     break
                 elif op == '3':
                     return  
@@ -281,13 +281,13 @@ OP: ''')
                 os.system('cls' if os.name == 'nt' else 'clear')
                 titulo_automarket()
                 titulo_editar()
-                print('ERRO: Veículo não encontrado!')
-                n = input('EDITAR NOVO VEÍCULO [1]\nVOLTAR AO MENU [2]\n>> ')
+                print('ERRO: Paciente não encontrado!')
+                n = input('EDITAR NOVO PACIENTE [1]\nVOLTAR AO MENU [2]\n>> ')
                 if n == '1':
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_editar()
-                    placa = input('PLACA: ')
+                    prontuário = input('PRONTUÁRIO: ').split()
                     break  
                 elif n == '2':
                     return 

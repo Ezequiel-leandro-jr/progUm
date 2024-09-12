@@ -12,7 +12,7 @@ def listar(portfolio):
         os.system('cls' if os.name == 'nt' else 'clear')
         titulo_automarket()
         titulo_listar()
-        for veiculo in portfolio:
+        for paciente in portfolio:
             print(f'''
     PACIENTE {i}:
     ----------------------------------------------------------------------------------------------------------------------
