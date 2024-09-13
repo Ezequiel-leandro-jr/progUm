@@ -1,24 +1,24 @@
 def titulo_automarket():
     print('''
-  ===|| AUTOMARKET ||===
+  ||||| ClinidEV |||||
 
 ''')
 
 def titulo_buscar():
     print('''
-      BUSCAR VEÍCULO
+      BUSCAR PACIENTE
 --------------------------
 ''')
 
 def titulo_deletar():
     print('''
-      DELETAR VEÍCULO
+      DELETAR PACIENTE
 --------------------------
 ''')
 
 def titulo_editar():
     print('''
-      EDITAR VEÍCULO
+      EDITAR PACIENTE
 --------------------------
 ''')
 
@@ -30,6 +30,6 @@ def titulo_listar():
 
 def titulo_registrar():
     print('''
-    REGISTRAR VEÍCULO
+    REGISTRAR PACIENTE
 --------------------------
 ''')

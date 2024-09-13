@@ -1,42 +1,42 @@
 from funcao_busca import funcao_busca
 from funcao_exibir import funcao_exibir
-from cabecalhos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar
+from titulos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar
 import time
 import os
 
-def deletar(portfolio, placa):
+def deletar(portfolio, prontuario):
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         titulo_automarket()
         titulo_deletar()
-        veiculo = funcao_busca(portfolio, placa)
-        if veiculo:
+        paciente = funcao_busca(portfolio, prontuario)
+        if paciente:
             n = '4'
             while n == '4':
                 os.system('cls' if os.name == 'nt' else 'clear')
                 titulo_automarket()
                 titulo_deletar()
-                funcao_exibir(veiculo)
-                n = input('DELETAR [1]\nNOVA BUSCA [2]\nVOLTAR AO MENU [3]\n>>> ')
+                funcao_exibir(paciente)
+                n = input('CONFIRMAR DELEÇÃO [1]\nNOVA BUSCA [2]\nVOLTAR AO MENU [3]\n>>> ')
                 match n:
                     case '1':
-                        portfolio.remove(veiculo)
+                        portfolio.remove(paciente)
                         os.system('cls' if os.name == 'nt' else 'clear')
                         titulo_automarket()
                         titulo_deletar()
-                        print('VEÍCULO DELETADO COM SUCESSO!')
+                        print('PACIENTE DELETADO COM SUCESSO!')
                         time.sleep(2)
                         n = '0'
                         while n == '0':
                             os.system('cls' if os.name == 'nt' else 'clear')
                             titulo_automarket()
                             titulo_deletar()
-                            n = input('DELETAR OUTRO VEÍCULO [1]\nVOLTAR AO MENU [2]\n>>> ')
+                            n = input('DELETAR OUTRO PACIENTE [1]\nVOLTAR AO MENU [2]\n>>> ')
                             if n == '1':
                                 os.system('cls' if os.name == 'nt' else 'clear')
                                 titulo_automarket()
                                 titulo_deletar()
-                                placa = input('PLACA: ')
+                                prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                             elif n == '2':
                                 return
                             else:
@@ -47,7 +47,7 @@ def deletar(portfolio, placa):
                         os.system('cls' if os.name == 'nt' else 'clear')
                         titulo_automarket()
                         titulo_deletar()
-                        placa = input('PLACA: ')
+                        prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                         n = '5'
                     case '3':
                         n = '5'
@@ -61,13 +61,13 @@ def deletar(portfolio, placa):
                 os.system('cls' if os.name == 'nt' else 'clear')
                 titulo_automarket()
                 titulo_deletar()
-                print('\nERRO: Veículo não encontrado!')
+                print('\nERRO: Paciente não encontrado!')
                 n = input('NOVA DELEÇÃO [1]\nVOLTAR AO MENU [2]\n>> ')
                 if n == '1':
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_deletar()
-                    placa = input('PLACA: ')
+                    prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                     break  
                 elif n == '2':
                     return 

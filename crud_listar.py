@@ -1,6 +1,6 @@
 from crud_editar import editar
 from crud_deletar import deletar
-from cabecalhos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar, titulo_listar
+from titulos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar, titulo_listar
 import time
 import os
 
@@ -12,35 +12,37 @@ def listar(portfolio):
         os.system('cls' if os.name == 'nt' else 'clear')
         titulo_automarket()
         titulo_listar()
-        for veiculo in portfolio:
+        for paciente in portfolio:
             print(f'''
-    VEíCULO {i}:
+    PACIENTE {i}:
     ----------------------------------------------------------------------------------------------------------------------
-    PLACA: {veiculo.placa} | TIPO: {veiculo.tipo} | MARCA: {veiculo.marca} | MODELO: {veiculo.modelo}
-    ANO: {veiculo.ano_fabricacao} | COR: {veiculo.cor} | PORTAS: {veiculo.portas} | COMBUSTÍVEL: {veiculo.combustivel}
-    ESTADO: {veiculo.conservacao} | QUILOMETRAGEM: {veiculo.quilometragem:.2f}Km | PREÇO: R${veiculo.preco:.2f}
-    STATUS: {veiculo.status}
+    PRONTUÁRIO: {paciente.prontuario}
+    NOME COMPLETO: {paciente.nome_paciente}
+    CPF: {paciente.cpf_paciente} | IDADE: {paciente.idade_paciente} anos | CONTATO: {paciente.contato_paciente}
+    DATA DA CONSULTA: {paciente.data_consulta} | HORÁRIO: {paciente.hora_consulta} | ESPECIALIDADE: {paciente.especialidade}
+    MÉDICO(A): Dr.{paciente.medico} | TIPO: {paciente.tipo_consulta} | ACOMPANHANTE: {paciente.acompanhante}
+    PLANO: {paciente.plano}
     ----------------------------------------------------------------------------------------------------------------------
     ''')
             i += 1
             soma += 1
             
-        print(f'\nTOTAL DE VEÍCULOS: {soma}\n ______________________________________________________________________________________________________________________')
+        print(f'\nTOTAL DE PACIENTES: {soma}\n ______________________________________________________________________________________________________________________')
             
-        n = input('\nEDITAR VEÍCULO [1]\nDELETAR VEÍCULO [2]\nVOLTAR AO MENU [3]\n>>> ')
+        n = input('\nEDITAR PACIENTE [1]\nDELETAR PACIENTE [2]\nVOLTAR AO MENU [3]\n>>> ')
         if n == '1':
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_listar()
-            placa = input('PLACA: ')
-            editar(portfolio, placa)
+            prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
+            editar(portfolio, prontuario)
             return
         elif n == '2':
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_listar()
-            placa = input('PLACA: ')
-            deletar(portfolio, placa)
+            prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
+            deletar(portfolio, prontuario)
             return
                 
         elif n == '3':

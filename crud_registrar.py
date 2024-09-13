@@ -1,110 +1,112 @@
-# placa, tipo, marca, modelo, cor, ano_fabricacao, portas, combustivel, conservacao, quilometragem, preco, status
 import time
-from classe_veiculo import Veiculo
+from classe_paciente import Paciente
 from funcao_exibir import funcao_exibir
 from crud_listar import listar
-from cabecalhos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar
+from titulos import titulo_automarket, titulo_buscar, titulo_deletar, titulo_editar, titulo_registrar
 import os
     
 def cadastrar(portfolio):
     n = '0'
     while n == '0':
-        tipo = '8'
-        combustivel = '8'
-        conservacao = '3'
-        status = '5'
+        especialidade = '8'
+        tipo_consulta = '8'
+        acompanhante = '3'
+        plano = '5'
         os.system('cls' if os.name == 'nt' else 'clear')
         titulo_automarket()
         titulo_registrar()    
-        placa = input('PLACA: ').strip()
-        while tipo == '8':
+        prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
+        os.system('cls' if os.name == 'nt' else 'clear')
+        titulo_automarket()
+        titulo_registrar()   
+        nome_paciente = input('NOME COMPLETO: ').strip().upper()
+        os.system('cls' if os.name == 'nt' else 'clear')
+        titulo_automarket()
+        titulo_registrar()
+        cpf_paciente = input('CPF: ').strip().upper()
+        os.system('cls' if os.name == 'nt' else 'clear')
+        titulo_automarket()
+        titulo_registrar()
+        idade_paciente = int(input('IDADE: '))
+        os.system('cls' if os.name == 'nt' else 'clear')
+        titulo_automarket()
+        titulo_registrar()
+        data_consulta = input('DATA DA CONSULTA (ex: 23/01/2024): ').strip().upper()
+        os.system('cls' if os.name == 'nt' else 'clear')
+        titulo_automarket()
+        titulo_registrar()     
+        hora_consulta = input('HORA DA CONSULTA (ex: 14:00): ').upper()
+        while especialidade == '8':
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_registrar()
-            tipo = input('''
-TIPO:
-1. Camioneta
-2. Caminhonete
-3. Caminhão
-4. Carro
-5. Carreta
-6. Motocicleta
-7. Outro
+            especialidade = input('''
+ESPECIALIDADE:
+1. Clínica Geral
+2. Pediatria
+3. Geriatria
+4. Cardiologia
+5. Gastroenterologia
+6. Endocrinologia
+7. Reumatologia
 ----------------
 OP: ''')
-            match tipo:
+            match especialidade:
                 case '1':
-                    tipo = 'Camioneta'
+                    especialidade = 'Clínica Geral'.upper()
                 case '2':
-                    tipo = 'Caminhonete'
+                    especialidade = 'Pediatria'.upper()
                 case '3':
-                    tipo = 'Caminhão'
+                    especialidade = 'Geriatria'.upper()
                 case '4':
-                    tipo = 'Carro'
+                    especialidade = 'Cardiologia'.upper()
                 case '5':
-                    tipo = 'Carreta'
+                    especialidade = 'Gastroenterologia'.upper()
                 case '6':
-                    tipo = 'Motocicleta'
+                    especialidade = 'Endocrinologia'.upper()
                 case '7':
-                    tipo = 'Outro'
+                    especialidade = 'Reumatologia'.upper()
                 case _:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_registrar()
                     print('ERRO: Opção inválida!')
-                    tipo = '8'
+                    especialidade = '8'
                     time.sleep(1)
-                    
-        os.system('cls' if os.name == 'nt' else 'clear')
-        titulo_automarket()
-        titulo_registrar()   
-        marca = input('MARCA: ')
         os.system('cls' if os.name == 'nt' else 'clear')
         titulo_automarket()
         titulo_registrar()
-        modelo = input('MODELO: ')
-        os.system('cls' if os.name == 'nt' else 'clear')
-        titulo_automarket()
-        titulo_registrar()
-        cor = input('COR: ')
-        os.system('cls' if os.name == 'nt' else 'clear')
-        titulo_automarket()
-        titulo_registrar()
-        ano_fabricacao = input('ANO: ')
-        os.system('cls' if os.name == 'nt' else 'clear')
-        titulo_automarket()
-        titulo_registrar()
-        portas = int(input('PORTAS: '))
-        while combustivel == '8':
+        medico = input('MÉDICO(A): ').strip().upper()
+        while tipo_consulta == '8':
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_registrar()
-            combustivel = input('''
-    TIPO:
-    1. Gasolina
-    2. GLP
-    3. Etanol
-    4. GNV
-    5. Eletrico
-    6. Hibrido
-    7. Outro
+            tipo_consulta = input('''
+    TIPO DA CONSULTA:
+    1. Primeira Vez
+    2. Retorno
+    3. Encaixe
+    4. Urgência
+    5. Acompanhamento
+    6. Prioritária
+    7. Reagendamento
     ----------------
     OP: ''')
-            match combustivel:
+            match tipo_consulta:
                 case '1':
-                    combustivel = 'Gasolina'
+                    tipo_consulta = 'Primeira Vez'.upper()
                 case '2':
-                    combustivel = 'GLP'
+                    tipo_consulta = 'Retorno'.upper()
                 case '3':
-                    combustivel = 'Etanol'
+                    tipo_consulta = 'Encaixe'.upper()
                 case '4':
-                    combustivel = 'GNV'
+                    tipo_consulta = 'Urgência'.upper()
                 case '5':
-                    combustivel = 'Eletrico'
+                    tipo_consulta = 'Acompanhamento'.upper()
                 case '6':
-                    combustivel = 'Hibrido'
+                    tipo_consulta = 'Prioritária'.upper()
                 case '7':
-                    combustivel = 'Outro'
+                    tipo_consulta = 'Reagendamento'.upper()
                 case _:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
@@ -112,54 +114,50 @@ OP: ''')
                     print('ERRO: Opcao incorreta! Tente novamente!')
                     combustivel = '8'
                     time.sleep(1) 
-        while conservacao == '3':
+        while acompanhante == '3':
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_registrar()
-            conservacao = input('ESTADO DE CONSERVACAO:\n1. Novo\n2. Seminovo\n----------------\nOP: ')
-            match conservacao:
+            acompanhante = input('ACOMPANHANTE:\n1. Sim\n2. Não\n----------------\nOP: ')
+            match acompanhante:
                 case '1':
-                    conservacao = 'Novo'
+                    acompanhante = 'Sim'.upper()
                 case '2':
-                    conservacao = 'Seminovo'
+                    acompanhante = 'Não'.upper()
                 case _:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_registrar()
                     print('ERRO: Opcao incorreta! Tente novamente!')
-                    conservacao = '3'
+                    acompanhante = '3'
                     time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
         titulo_automarket()
-        titulo_registrar()     
-        quilometragem = float(input('QUILOMETRAGEM (KM): '))
-        os.system('cls' if os.name == 'nt' else 'clear')
-        titulo_automarket()
         titulo_registrar()
-        preco = float(input('PREÇO (R$): '))
-        while status == '5':
+        contato_paciente = input('CONTATO: ').strip().upper()
+        while plano == '5':
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_registrar()
-            status = input('STATUS:\n1. A venda\n2. Reservado\n3. Vendido\n4. Indisponivel\n----------------\nOP: ')
-            match status:
+            plano = input('PLANO:\n1. Sassepe\n2. Unimed\n3. Avulso\n4. Outro\n----------------\nOP: ')
+            match plano:
                 case '1':
-                    status = 'A venda'
+                    plano = 'Sassepe'.upper()
                 case '2':
-                    status = 'Reservado'
+                    plano = 'Unimed'.upper()
                 case '3':
-                    status = 'Vendido'
+                    plano = 'Avulso'.upper()
                 case '4':
-                    status = 'Indisponivel'
+                    plano = 'Outro'.upper()
                 case _:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_registrar()
-                    print('ERRO: Opcao incorreta! Tente novamente!')
-                    status = '5'
+                    print('ERRO: Opção incorreta! Tente novamente!')
+                    plano = '5'
                     time.sleep(1)              
-        novo_veiculo = Veiculo(placa, tipo, marca, modelo, cor, ano_fabricacao, portas, combustivel, conservacao, quilometragem, preco, status)
-        portfolio.append(novo_veiculo)
+        novo_paciente = Paciente(prontuario, nome_paciente, cpf_paciente, idade_paciente, data_consulta, hora_consulta, especialidade, medico, tipo_consulta, acompanhante, contato_paciente, plano)
+        portfolio.append(novo_paciente)
         
         
         n = '3'
@@ -168,8 +166,8 @@ OP: ''')
             titulo_automarket()
             titulo_registrar()
             print('REGISTRO REALIZADO COM SUCESSO!')
-            funcao_exibir(novo_veiculo)
-            n = input('NOVO REGISTRO [1]\nLISTAR VEÍCULOS [2]\nVOLTAR AO MENU [3]\n>>> ')
+            funcao_exibir(novo_paciente)
+            n = input('NOVO REGISTRO [1]\nLISTAR PACIENTES [2]\nVOLTAR AO MENU [3]\n>>> ')
             if n == '1':
                 n = '0'
             elif n == '2':

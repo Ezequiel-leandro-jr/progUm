@@ -1,8 +1,8 @@
-def funcao_busca(portfolio, placa):
-    if placa:
-        for veiculo in portfolio:
-            if veiculo.placa == placa:
-                return veiculo
+def funcao_busca(portfolio, prontuario):
+    if prontuario:
+        for paciente in portfolio:
+            if paciente.prontuario == prontuario:
+                return paciente
     else:
         return
 
