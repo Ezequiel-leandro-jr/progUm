@@ -29,7 +29,7 @@ def buscar(portfolio, prontuario):
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_buscar()
-                    prontuario = input('PRONTUÁRIO: ').split()
+                    prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                     continue
                 case '4':
                     return
@@ -47,7 +47,7 @@ def buscar(portfolio, prontuario):
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_buscar()
-                    prontuario = input('PRONTUÁRIO: ').split()
+                    prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                     break  
                 elif n == '2':
                     return 

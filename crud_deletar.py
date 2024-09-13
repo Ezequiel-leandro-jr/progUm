@@ -17,7 +17,7 @@ def deletar(portfolio, prontuario):
                 titulo_automarket()
                 titulo_deletar()
                 funcao_exibir(paciente)
-                n = input('DELETAR [1]\nNOVA BUSCA [2]\nVOLTAR AO MENU [3]\n>>> ')
+                n = input('CONFIRMAR DELEÇÃO [1]\nNOVA BUSCA [2]\nVOLTAR AO MENU [3]\n>>> ')
                 match n:
                     case '1':
                         portfolio.remove(paciente)
@@ -36,7 +36,7 @@ def deletar(portfolio, prontuario):
                                 os.system('cls' if os.name == 'nt' else 'clear')
                                 titulo_automarket()
                                 titulo_deletar()
-                                prontuario = input('PRONTUÁRIO: ').split()
+                                prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                             elif n == '2':
                                 return
                             else:
@@ -47,7 +47,7 @@ def deletar(portfolio, prontuario):
                         os.system('cls' if os.name == 'nt' else 'clear')
                         titulo_automarket()
                         titulo_deletar()
-                        prontuario = input('PRONTUÁRIO: ').split()
+                        prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                         n = '5'
                     case '3':
                         n = '5'
@@ -67,7 +67,7 @@ def deletar(portfolio, prontuario):
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_deletar()
-                    prontuario = input('PRONTUÁRIO: ').split()
+                    prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                     break  
                 elif n == '2':
                     return 

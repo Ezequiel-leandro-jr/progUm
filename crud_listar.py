@@ -34,14 +34,14 @@ def listar(portfolio):
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_listar()
-            prontuario = input('PRONTUÁRIO: ').split()
+            prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
             editar(portfolio, prontuario)
             return
         elif n == '2':
             os.system('cls' if os.name == 'nt' else 'clear')
             titulo_automarket()
             titulo_listar()
-            prontuario = input('PRONTUÁRIO: ').split()
+            prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
             deletar(portfolio, prontuario)
             return
                 

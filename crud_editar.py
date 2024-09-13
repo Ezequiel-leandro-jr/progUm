@@ -265,7 +265,7 @@ OP:  ''')
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_editar()
-                    prontuário = input('PRONTUÁRIO: ').split()
+                    prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                     break
                 elif op == '3':
                     return  
@@ -287,7 +287,7 @@ OP:  ''')
                     os.system('cls' if os.name == 'nt' else 'clear')
                     titulo_automarket()
                     titulo_editar()
-                    prontuário = input('PRONTUÁRIO: ').split()
+                    prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
                     break  
                 elif n == '2':
                     return 

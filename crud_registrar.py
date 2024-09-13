@@ -15,7 +15,7 @@ def cadastrar(portfolio):
         os.system('cls' if os.name == 'nt' else 'clear')
         titulo_automarket()
         titulo_registrar()    
-        prontuario = input('PRONTUÁRIO: ').strip().upper()
+        prontuario = str(input('PRONTUÁRIO: ')).strip().upper()
         os.system('cls' if os.name == 'nt' else 'clear')
         titulo_automarket()
         titulo_registrar()   

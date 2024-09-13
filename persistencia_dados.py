@@ -10,7 +10,7 @@ def cria_banco():
             for line in f:
                 dados = line.strip().split(';')  # Split dos dados por ';'
                 paciente = Paciente(
-                    prontuario=dados[0],
+                    prontuario=str(dados[0]).strip().upper(),
                     nome_paciente=dados[1],
                     cpf_paciente=dados[2],
                     idade_paciente=int(dados[3]),
