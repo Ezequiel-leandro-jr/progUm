@@ -13,14 +13,14 @@ def cria_banco():
                     prontuario=dados[0],
                     nome_paciente=dados[1],
                     cpf_paciente=dados[2],
-                    idade_paciente=dados[3],
+                    idade_paciente=int(dados[3]),
                     data_consulta=dados[4],
                     hora_consulta=dados[5],
-                    especialidade=int(dados[6]),
+                    especialidade=dados[6],
                     medico=dados[7],
                     tipo_consulta=dados[8],
-                    acompanhante=float(dados[9]),
-                    contato_paciente=float(dados[10]),
+                    acompanhante=dados[9],
+                    contato_paciente=dados[10],
                     plano=dados[11]
                 )
                 lista_de_objetos.append(paciente)
@@ -34,5 +34,5 @@ def salva_banco(portfolio):
     with open(file, 'w') as f:
         for paciente in portfolio:
             f.write(f"{paciente.prontuario};{paciente.nome_paciente};{paciente.cpf_paciente};{paciente.idade_paciente};{paciente.data_consulta};"
-                    f"{vpaciente.hora_consulta};{paciente.especialidade};{paciente.medico};{paciente.tipo_consulta};"
+                    f"{paciente.hora_consulta};{paciente.especialidade};{paciente.medico};{paciente.tipo_consulta};"
                     f"{paciente.acompanhante};{paciente.contato_paciente};{paciente.plano}\n")
